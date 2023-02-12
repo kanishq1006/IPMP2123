@@ -1,0 +1,18 @@
+int getNode(SinglyLinkedListNode* llist, int positionFromTail) {
+SinglyLinkedListNode* t = llist;
+int length=0;
+while(t!=NULL)
+{
+    t=t->next;
+    length++;
+}
+int trav=1;
+int positionFromHead = length-positionFromTail;
+t = llist;
+while(trav!=positionFromHead)
+{
+    trav++;
+    t=t->next;
+}
+return t->data;
+}
