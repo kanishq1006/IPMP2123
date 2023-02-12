@@ -1,0 +1,46 @@
+nt main() {
+vector<int> vec;
+    int q;
+    cin >> q;
+    int minval=1000000007;
+    bool flag=false;
+    for (int i=0; i<q; i++)
+    {
+        int a,v;
+        cin >> a;
+        if (a==1)
+        {
+            cin >> v;
+            vec.push_back(v);
+            minval=min(minval,v);
+        }
+        if (a==2)
+        {
+            cin >> v;
+            if (v==minval)
+                flag=true;
+            for (int j=0; j<vec.size(); j++)
+            {
+                if (vec[j]==v)
+                {
+                    vec.erase(vec.begin()+j);
+                }
+            }
+        }
+        if (a==3)
+        {
+            if (flag)
+            {
+                minval=1000000007;
+                for (int j=0; j<vec.size();j++)
+                {
+                    minval=min(minval,vec[j]);    
+                }
+                flag = false;
+            }
+            cout << minval << endl;
+        }
+    }    
+    return 0;
+
+}
