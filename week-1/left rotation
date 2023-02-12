@@ -1,0 +1,15 @@
+int* rotateLeft(int d, int arr_count, int* arr, int* result_count) {
+    int *result=calloc(arr_count, sizeof(int));
+    int i;
+    int index = d;
+    for(i=0;i<arr_count;i++)
+    {
+        result[i]=arr[index];
+        index++;
+        if(index==arr_count)
+        {
+            index = 0;
+        }
+    }
+    return result;
+}
