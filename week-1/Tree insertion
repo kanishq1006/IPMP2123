@@ -1,0 +1,40 @@
+ Node * insert(Node * root, int data) {
+    Node* n = new Node(data);
+    n->data = data;
+    n->left = NULL;
+    n->right = NULL;
+     if(!root)
+    {
+        root=n;
+        return root;
+    } 
+    Node *temp = root;
+    while(1){
+    if(temp->data<n->data)
+    {
+        if(temp->right!=NULL)
+        {
+            temp = temp->right;
+        }
+        else
+        {
+            temp->right = n;
+            break;
+        }
+    }
+    if(temp->data > n->data){
+            if(temp->left!=NULL)
+            {
+                temp = temp->left;
+            }
+            else
+            {
+                temp->left=n;
+                break;
+            }
+    
+    }
+    }
+
+        return root;
+    }
